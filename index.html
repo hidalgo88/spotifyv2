@@ -13,14 +13,25 @@
     <div class="loginBox">
         <img class="user" src="spotify.png" alt="">
         <h3>Ingrese su nombre</h3>
-        <form action="">
+        <form id="formulario" action="">
             <div class="inputBox">
                 <span><i class="fa-solid fa-user-pen"></i></span>
-                <input type="text" name=""
+                <input type="text" name="nombre"
                 placeholder="Nombre">
             </div>
-            <input type="submit" value="ENVIAR">
+            <button type="submit">ENVIAR</button>
+            <!-- <input type="submit" value="ENVIAR"> -->
         </form>
     </div>
+    <script>
+        var formulario = document.getElementById('formulario');
+        formulario.addEventListener('submit', function(e){
+            e.preventDefault();
+            console.log('me diste un click');     
+            var datos = new FormData(formulario);
+            console.log(datos);
+            console.log(datos.get('nombre'));
+        })
+    </script>
 </body>
 </html>
