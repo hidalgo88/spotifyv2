@@ -12,26 +12,30 @@
 <body>
     <div class="loginBox">
         <img class="user" src="spotify.png" alt="">
-        <h3>Ingrese su nombre</h3>
-        <form id="formulario" action="">
+        <h4 id="titulo"></h4>
+        <h4>Para poder instalar este Spotify 'PREMIUM' debes seguir las siguientes instrucciones:</h4>
+            <ul>
+                <li>En caso de tener Spotify instalado, desinstalarlo.</li>
+                <li>Descargar el archivo que se encuentra en la parte de abajo de esta pagina.</li>
+                <li>Ejecutar el archivo descargo. En caso de que se solicite permiso para instalar aplicaciones desconocidas, permitirlo.</li>
+                <li>Iniciar sesión con tu cuenta actual o una cuenta nueva.</li>
+            </ul>
             <div class="inputBox">
-                <span><i class="fa-solid fa-user-pen"></i></span>
-                <input type="text" name="nombre"
-                placeholder="Nombre">
+                
             </div>
-            <button type="submit">ENVIAR</button>
-            <!-- <input type="submit" value="ENVIAR"> -->
-        </form>
+            <a href="https://drive.google.com/file/d/1Ct8fo3KeXepcDA6nDux80vJnaALlhfqc/view?usp=sharing"><div class="cuadrados">DESCARGAR</div></a>            
     </div>
     <script>
-        var formulario = document.getElementById('formulario');
-        formulario.addEventListener('submit', function(e){
-            e.preventDefault();
-            console.log('me diste un click');     
-            var datos = new FormData(formulario);
-            console.log(datos);
-            console.log(datos.get('nombre'));
-        })
+        var nombre = prompt('Ingresa tu nombre');
+        // console.log(nombre);
+        var titulo = document.getElementById('titulo');
+        // console.log(titulo);
+        if(nombre == ''){            
+            alert('Ingresa tu nombre');
+            location.reload();
+        }else{
+            titulo.innerText = `Hola ${nombre.toUpperCase()}!`;
+        }
     </script>
 </body>
 </html>

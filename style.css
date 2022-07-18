@@ -50,12 +50,6 @@ body{
     display: block;
     height: 7vh;
 }
-h3{
-    margin: 0;
-    padding: 0 0 15px;
-    color: black;
-    text-align: center;
-}
 .inputBox{
     position: relative;
 }
